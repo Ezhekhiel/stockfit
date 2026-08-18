@@ -84,6 +84,14 @@
                             </a>
                         </li>
                     </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ url('/lab/chemical_waste/') }}" class="nav-link">
+                                <i class="nav-icon bi bi-circle"></i>
+                                <p>Waste</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>

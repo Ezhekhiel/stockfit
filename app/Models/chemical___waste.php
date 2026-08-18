@@ -11,9 +11,13 @@ class chemical___waste extends Model
     protected $table = "chemical___wastes";
     protected $guarded  = [];
 
-    public function chemical() {
-        return $this->hasOne(chemical___database::class,'code_chemical', 'code_chemical')
-                ->whereColumn('chemical___databases.model','chemical___wastes.model');
+    public function chemical()
+    {
+        return $this->belongsTo(
+            chemical___database::class,
+            'id_chemical',
+            'id'
+        );
     }
 
 }
