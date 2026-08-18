@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('chemical___wastes', function (Blueprint $table) {
             $table->id();
-            $table->string('code_chemical');
-            $table->string('model');
+            $table->string('id_chemical');
             $table->integer('gram');
-            $table->text('description');
             $table->integer('lot_number');
+            $table->string('area');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

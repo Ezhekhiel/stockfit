@@ -1,6 +1,7 @@
 <?php
 
 use App\Events\DashboardUpdated;
+use App\Http\Controllers\ChemicalWasteController;
 use App\Http\Controllers\labChemicalController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\padPressController;
@@ -135,6 +136,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/save_id_telegram',[labChemicalController::class,'test_connection_telegram']);
     Route::get('/tesChanel',[labChemicalController::class,'tesChanel']);
     Route::get('/testKirimPesan/{cell}',[labChemicalController::class,'kirim_pesan']);
+
+
+    Route::get('/lab/chemical_waste/',[ChemicalWasteController::class,'index']);
+    Route::POST('/lab/chemical_waste/',[ChemicalWasteController::class,'store'])->name('lab.chemical.waste');
+    Route::put('/lab/chemical_waste/{id}', [ChemicalWasteController::class, 'update'])->name('lab.chemical.waste.update');
+    Route::delete('/lab/chemical_waste/{id}',[ChemicalWasteController::class,'destroy'])->name('lab.chemical.waste.destroy');
+
+    Route::get('/lab/chemical_waste/main',[ChemicalWasteController::class,'main'])->name('lab.chemical.waste.main');
+    Route::get('/lab/chemical_waste/export',[ChemicalWasteController::class,'export'])->name('lab.chemical.waste.export');
+
 
     //database chemical
         Route::get('/lab/chemical/database',[labChemicalController::class,'index_database'])->name('lab.chemical.database');
