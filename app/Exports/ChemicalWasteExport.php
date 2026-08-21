@@ -53,9 +53,9 @@ class ChemicalWasteExport implements
 
                     $item->chemical->model ?? '-',
 
-                    $item->chemical->adhesive_supplier ?? '-',
+                    $item->chemical->supplier ?? '-',
 
-                    $item->chemical->type_of_adhesive ?? '-',
+                    $item->chemical->type ?? '-',
 
                     $item->chemical->adhesive_kind ?? '-',
 

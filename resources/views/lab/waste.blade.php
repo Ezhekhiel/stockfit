@@ -38,7 +38,7 @@
                                 onkeyup="searchMain()" placeholder="Search Code Chemical dan Model"
                                 class="form-control text-center">
 
-                            <select name="select_option" id="select_option" onchange="main(this.value)"
+                            <select name="select_option" id="select_option" onchange="onchangeMain()"
                                 class="form-select text-center w-auto style-input-flex">
                                 <option value="Building-1">Building-1</option>
                                 <option value="Building-2">Building-2</option>
@@ -211,7 +211,8 @@
                         <div class="row">
                             <div class="col-md-2">
                                 <label for="id_gramasi_modal" class="form-label">Pilih Range Data</label>
-                                <input type="text" class="form-control date_range" placeholder="Select date range">
+                                <input type="text" class="form-control date_range" id="date_export"
+                                    placeholder="Select date range">
                             </div>
                             <div class="col-md-2">
                                 <label for="id_gramasi_modal" class="form-label">Area</label>
