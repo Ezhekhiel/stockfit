@@ -185,21 +185,21 @@
         $("#btnExport").on('click', function(event) {
             event.preventDefault();
 
-            const dates = picker.selectedDates;
+            const getdates = $('#date_export').val();
+            const dates = getdates.split(" to ");
             const area = $('#select_area_export').val();
 
-            console.log(dates);
-
-            if (dates.length !== 2) {
-                alert('Silakan pilih range tanggal terlebih dahulu.');
-                return;
+            console.log(dates.length);
+            let startDate = "";
+            let endDate = "";
+            if (dates.length == 1) {
+                startDate = dates[0];
+                endDate = dates[0];
+            } else {
+                startDate = dates[0];
+                endDate = dates[1];
             }
 
-            const startDate = picker.formatDate(dates[0], "Y-m-d");
-            const endDate = picker.formatDate(dates[1], "Y-m-d");
-
-            console.log('Start Date:', startDate);
-            console.log('End Date:', endDate);
 
             const url =
                 `/lab/chemical_waste/export?area=${area}&start_date=${startDate}&end_date=${endDate}`;
