@@ -47,7 +47,7 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently --names=server,queue,reverb,vite -c green,yellow,magenta,blue \"php artisan serve --host=10.2.11.4 --port=5051\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan reverb:start\" \"npm run dev\""
+            "npx concurrently --names=server,queue,reverb,schedule,vite -c green,yellow,magenta,yellow,blue \"php scripts/serve.php\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan reverb:start\" \"php artisan schedule:work\" \"npm run dev\""
         ],
         "test": [
             "@php artisan config:clear --ansi",
